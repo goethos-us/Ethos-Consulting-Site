@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #38761d;
+  --brand-dark: #2d5f16;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-white text-neutral-800 antialiased;
+}
+
+/* Consistent reading rhythm (body + small body) */
+@layer components {
+  .ethos-prose {
+    @apply text-base leading-7 text-neutral-600;
+  }
+  .ethos-prose-sm {
+    @apply text-sm leading-7 text-neutral-600;
+  }
+  .ethos-section-title {
+    @apply text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl;
+  }
+  .ethos-section-intro {
+    @apply mt-5 max-w-3xl ethos-prose;
+  }
+}
+
+:focus-visible {
+  @apply outline-2 outline-offset-2 outline-brand;
+}
