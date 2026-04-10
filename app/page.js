@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Industries from "@/components/Industries";
+import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
 
 export default function Home() {
@@ -13,11 +14,19 @@ export default function Home() {
       <Header />
       <main id="main">
         <Hero />
-        <Approach />
+        <ScrollReveal>
+          <Approach />
+        </ScrollReveal>
         <Services />
-        <Industries />
-        <CtaBand />
-        <Contact />
+        <ScrollReveal>
+          <Industries />
+        </ScrollReveal>
+        <ScrollReveal>
+          <CtaBand />
+        </ScrollReveal>
+        <ScrollReveal>
+          <Contact />
+        </ScrollReveal>
       </main>
       <Footer />
     </>

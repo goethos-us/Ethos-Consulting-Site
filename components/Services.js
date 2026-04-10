@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+import { servicesImage } from "@/lib/images";
+import ScrollReveal from "./ScrollReveal";
 import SectionRule from "./SectionRule";
 
 /** Six major capability areas (merged technology lines). */
@@ -55,48 +58,61 @@ export default function Services() {
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl">
-          <h2 id="services-heading" className="ethos-section-title">
-            What Services We Offer
-          </h2>
-          <SectionRule />
-          <div className="ethos-section-intro space-y-4">
-            <p>
-              Below is how we group our work for clients. Each area can stand alone or combine with others when your
-              initiative spans strategy, platforms, and delivery. If you are unsure where to start, tell us what is on
-              fire—we will suggest a sensible first step.
-            </p>
-            <p>
-              We provide the right support for your situation, whether that means embedding with your team for a season,
-              leading a defined workstream, or helping you hire and onboard the right full-time talent once the hardest
-              risks are behind you.
-            </p>
+        <ScrollReveal>
+          <div className="max-w-3xl">
+            <h2 id="services-heading" className="ethos-section-title">
+              What Services We Offer
+            </h2>
+            <SectionRule />
+            <div className="ethos-section-intro space-y-4">
+              <p>
+                Below is how we group our work for clients. Each area can stand alone or combine with others when your
+                initiative spans strategy, platforms, and delivery. If you are unsure where to start, tell us what is
+                on fire—we will suggest a sensible first step.
+              </p>
+              <p>
+                We provide the right support for your situation, whether that means embedding with your team for a
+                season, leading a defined workstream, or helping you hire and onboard the right full-time talent once the
+                hardest risks are behind you.
+              </p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <figure className="relative mx-auto mt-12 aspect-[21/9] max-h-[min(22rem,50vw)] w-full max-w-5xl overflow-hidden rounded-2xl bg-neutral-100 shadow-md ring-1 ring-neutral-200/80">
+            <Image
+              src={servicesImage}
+              alt="Analytics and business data on a laptop—representing data-driven consulting"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 1024px"
+            />
+          </figure>
+        </ScrollReveal>
 
         <ul className="mt-14 grid gap-10 lg:grid-cols-2">
-          {items.map((s) => (
-            <li
-              key={s.title}
-              className="flex flex-col rounded-xl border border-neutral-200 p-8 transition hover:border-brand/30 hover:shadow-sm"
-            >
-              <h3 className="text-lg font-semibold leading-6 text-neutral-900">{s.title}</h3>
-              <div className="mt-4 flex-1 space-y-4">
-                {s.body.map((para, i) => (
-                  <p key={i} className="ethos-prose-sm">
-                    {para}
-                  </p>
-                ))}
-              </div>
-              <Link
-                href="#contact"
-                className="mt-6 inline-flex text-sm font-semibold leading-6 text-brand hover:text-brand-dark"
-              >
-                Read More — Get In Touch
-                <span className="ml-1" aria-hidden>
-                  →
-                </span>
-              </Link>
+          {items.map((s, index) => (
+            <li key={s.title}>
+              <ScrollReveal delay={index * 85}>
+                <div className="flex h-full flex-col rounded-xl border border-neutral-200 p-8 transition hover:border-brand/30 hover:shadow-sm">
+                  <h3 className="text-lg font-semibold leading-6 text-neutral-900">{s.title}</h3>
+                  <div className="mt-4 flex-1 space-y-4">
+                    {s.body.map((para, i) => (
+                      <p key={i} className="ethos-prose-sm">
+                        {para}
+                      </p>
+                    ))}
+                  </div>
+                  <Link
+                    href="#contact"
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold leading-6 text-brand hover:text-brand-dark"
+                  >
+                    Learn More
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </ScrollReveal>
             </li>
           ))}
         </ul>
