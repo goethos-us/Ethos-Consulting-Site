@@ -28,13 +28,19 @@ export default function Footer() {
                 <p>Sheridan, WY 82801</p>
               </div>
               <p className="mt-5 leading-6">
-                <a href="tel:+13213459567" className="text-brand hover:text-brand-dark">
+                <a
+                  href="tel:+13213459567"
+                  className="text-brand transition hover:text-brand-dark hover:underline hover:decoration-brand/60 hover:underline-offset-2"
+                >
                   321-345-9567
                 </a>
                 <span className="mx-2 text-neutral-300" aria-hidden>
                   |
                 </span>
-                <a href="mailto:contact@goethos.us" className="text-brand hover:text-brand-dark">
+                <a
+                  href="mailto:contact@goethos.us"
+                  className="text-brand transition hover:text-brand-dark hover:underline hover:decoration-brand/60 hover:underline-offset-2"
+                >
                   contact@goethos.us
                 </a>
               </p>
@@ -45,7 +51,10 @@ export default function Footer() {
             <ul className="mt-3 flex flex-wrap gap-x-6 gap-y-2 text-sm leading-7">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-neutral-700 hover:text-brand-dark">
+                  <Link
+                    href={l.href}
+                    className="text-neutral-700 underline-offset-4 transition hover:text-brand-dark hover:underline"
+                  >
                     {l.label}
                   </Link>
                 </li>

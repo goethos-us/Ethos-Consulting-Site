@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const nav = [
   { href: "#home", label: "Home" },
@@ -13,9 +13,21 @@ const nav = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-neutral-200/80 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header
+      className={`sticky top-0 z-50 border-b border-neutral-200/80 bg-white/95 backdrop-blur transition-shadow duration-300 supports-[backdrop-filter]:bg-white/80 ${
+        scrolled ? "shadow-sm" : "shadow-none"
+      }`}
+    >
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded focus:bg-brand focus:px-3 focus:py-2 focus:text-white"
@@ -41,7 +53,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-neutral-700 transition hover:bg-brand-surface hover:text-brand-dark xl:px-3"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-neutral-700 underline-offset-4 transition hover:bg-brand-surface hover:text-brand-dark hover:underline xl:px-3"
             >
               {item.label}
             </Link>

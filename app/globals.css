@@ -40,3 +40,64 @@ body {
 :focus-visible {
   @apply outline-2 outline-offset-2 outline-brand;
 }
+
+/* Section title rule — soft shimmer */
+.ethos-section-rule {
+  background: linear-gradient(
+    90deg,
+    var(--brand-dark) 0%,
+    var(--brand) 35%,
+    #5a9c3a 55%,
+    var(--brand) 75%,
+    var(--brand-dark) 100%
+  );
+  background-size: 220% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ethos-section-rule {
+    animation: ethos-section-rule-shimmer 5s ease-in-out infinite;
+  }
+}
+
+@keyframes ethos-section-rule-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* CTA band — slow drift on background photo */
+@media (prefers-reduced-motion: no-preference) {
+  .ethos-cta-drift {
+    animation: ethos-cta-drift 32s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes ethos-cta-drift {
+  0% {
+    transform: scale(1.06) translate3d(-1.5%, 0, 0);
+  }
+  100% {
+    transform: scale(1.14) translate3d(1.5%, -1.5%, 0);
+  }
+}
+
+/* Hero image — subtle “alive” framing */
+@media (prefers-reduced-motion: no-preference) {
+  .ethos-hero-kenburns {
+    animation: ethos-hero-ken 22s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes ethos-hero-ken {
+  0% {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.09) translate3d(-1.2%, -0.8%, 0);
+  }
+}

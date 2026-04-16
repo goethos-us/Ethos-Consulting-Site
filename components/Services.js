@@ -80,22 +80,22 @@ export default function Services() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <figure className="relative mx-auto mt-12 aspect-[21/9] max-h-[min(22rem,50vw)] w-full max-w-5xl overflow-hidden rounded-2xl bg-neutral-100 shadow-md ring-1 ring-neutral-200/80">
+          <figure className="group relative mx-auto mt-12 aspect-[21/9] max-h-[min(22rem,50vw)] w-full max-w-5xl overflow-hidden rounded-2xl bg-neutral-100 shadow-md ring-1 ring-neutral-200/80">
             <Image
               src={servicesImage}
               alt="Analytics and business data on a laptop—representing data-driven consulting"
               fill
-              className="object-cover object-center"
+              className="object-cover object-center transition-transform duration-[1.4s] ease-out motion-safe:group-hover:scale-[1.03]"
               sizes="(max-width: 1024px) 100vw, 1024px"
             />
           </figure>
         </ScrollReveal>
 
-        <ul className="mt-14 grid gap-10 lg:grid-cols-2">
+        <ul className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-stretch">
           {items.map((s, index) => (
-            <li key={s.title}>
-              <ScrollReveal delay={index * 85}>
-                <div className="flex h-full flex-col rounded-xl border border-neutral-200 p-8 transition hover:border-brand/30 hover:shadow-sm">
+            <li key={s.title} className="h-full">
+              <ScrollReveal delay={index * 85} className="h-full">
+                <div className="flex h-full flex-col rounded-xl border border-neutral-200 p-8 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 hover:border-brand/35 hover:shadow-md">
                   <h3 className="text-lg font-semibold leading-6 text-neutral-900">{s.title}</h3>
                   <div className="mt-4 flex-1 space-y-4">
                     {s.body.map((para, i) => (
@@ -106,7 +106,7 @@ export default function Services() {
                   </div>
                   <Link
                     href="#contact"
-                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold leading-6 text-brand hover:text-brand-dark"
+                    className="mt-6 inline-flex items-center gap-1 text-sm font-semibold leading-6 text-brand transition hover:gap-2 hover:text-brand-dark"
                   >
                     Learn More
                     <span aria-hidden>→</span>

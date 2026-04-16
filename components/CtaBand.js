@@ -1,9 +1,24 @@
+import Image from "next/image";
 import Link from "next/link";
+import { ctaBandImage } from "@/lib/images";
 
 export default function CtaBand() {
   return (
-    <section className="bg-brand py-14 text-white sm:py-16" aria-labelledby="cta-heading">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="relative isolate overflow-hidden bg-brand py-14 text-white sm:py-16" aria-labelledby="cta-heading">
+      <Image
+        src={ctaBandImage}
+        alt=""
+        fill
+        className="object-cover opacity-35 ethos-cta-drift"
+        sizes="100vw"
+        aria-hidden
+        priority={false}
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-brand/95 via-brand/90 to-brand-dark/95"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
           <div className="max-w-2xl">
             <h2 id="cta-heading" className="text-xl font-bold leading-8 tracking-tight sm:text-2xl sm:leading-9">
@@ -17,7 +32,7 @@ export default function CtaBand() {
           </div>
           <Link
             href="#contact"
-            className="inline-flex shrink-0 items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold leading-6 text-brand shadow-sm transition hover:bg-neutral-100"
+            className="inline-flex shrink-0 items-center justify-center rounded-md bg-white px-6 py-3 text-sm font-semibold leading-6 text-brand shadow-sm transition hover:bg-neutral-100 active:scale-[0.98] motion-reduce:active:scale-100"
           >
             Get Started
           </Link>

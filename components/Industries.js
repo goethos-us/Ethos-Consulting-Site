@@ -75,17 +75,22 @@ export default function Industries() {
           </div>
         </div>
 
-        <ul className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {industries.map((ind) => (
-            <li
-              key={ind.name}
-              className="rounded-xl border border-neutral-200/90 bg-white p-6 shadow-sm"
-            >
-              <h3 className="text-base font-semibold leading-6 text-neutral-900">{ind.name}</h3>
-              <p className="mt-3 ethos-prose-sm">{ind.blurb}</p>
-            </li>
-          ))}
-        </ul>
+        <div className="-mx-4 mt-14 px-4 sm:-mx-6 sm:px-6 lg:mx-0 lg:px-0">
+          <ul className="flex gap-6 overflow-x-auto overscroll-x-contain pb-3 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0 lg:snap-none [&::-webkit-scrollbar]:hidden">
+            {industries.map((ind) => (
+              <li
+                key={ind.name}
+                className="w-[min(22rem,calc(100vw-2.5rem))] shrink-0 snap-center rounded-xl border border-neutral-200/90 bg-white p-6 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 hover:border-brand/25 hover:shadow-md sm:w-[min(24rem,70vw)] lg:w-auto lg:max-w-none"
+              >
+                <h3 className="text-base font-semibold leading-6 text-neutral-900">{ind.name}</h3>
+                <p className="mt-3 ethos-prose-sm">{ind.blurb}</p>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-center text-xs text-neutral-500 lg:hidden" aria-hidden="true">
+            Swipe sideways to browse industries
+          </p>
+        </div>
       </div>
     </section>
   );

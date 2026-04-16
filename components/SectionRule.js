@@ -1,7 +1,7 @@
 export default function SectionRule({ className = "" }) {
   return (
     <span
-      className={`mt-4 block h-px w-16 bg-brand sm:w-24 ${className}`}
+      className={`ethos-section-rule mt-4 block h-1 w-16 rounded-full sm:w-24 ${className}`}
       aria-hidden
     />
   );

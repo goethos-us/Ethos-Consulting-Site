@@ -40,13 +40,13 @@ export default function Hero() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="#contact"
-                  className="inline-flex items-center justify-center rounded-md bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark"
+                  className="inline-flex items-center justify-center rounded-md bg-brand px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-dark active:scale-[0.98] motion-reduce:active:scale-100"
                 >
                   Contact Us
                 </Link>
                 <Link
                   href="#services"
-                  className="inline-flex items-center justify-center rounded-md border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-neutral-800 transition hover:border-brand hover:text-brand-dark"
+                  className="inline-flex items-center justify-center rounded-md border border-neutral-300 bg-white px-5 py-3 text-sm font-semibold text-neutral-800 transition hover:border-brand hover:text-brand-dark active:scale-[0.98] motion-reduce:active:scale-100"
                 >
                   Browse Services
                 </Link>
@@ -55,6 +55,7 @@ export default function Hero() {
 
             <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-neutral-100 shadow-lg ring-1 ring-neutral-200/80 lg:aspect-[5/4]">
+                <div className="absolute inset-0 ethos-hero-kenburns will-change-transform">
                 <Image
                   src={heroImage}
                   alt="Consulting team collaborating on strategy in a modern office"
@@ -63,6 +64,7 @@ export default function Hero() {
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
+                </div>
               </div>
             </div>
           </div>

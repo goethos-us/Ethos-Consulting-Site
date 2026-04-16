@@ -21,13 +21,17 @@ const pillars = [
     title: "Respect For Your Constraints",
     text: "Timeline, budget, compliance, and legacy systems are real. We plan for them up front rather than treating them as surprises halfway through the plan.",
   },
+  {
+    title: "Cadence You Can Steer",
+    text: "Plans drift when assumptions go stale. We build in short readouts, visible backlog priorities, and explicit trade-offs so sponsors can adjust early—not only when the monthly steering deck says everything is “green.”",
+  },
 ];
 
 export default function Approach() {
   return (
     <section id="about" className="bg-brand-surface py-16 sm:py-20" aria-labelledby="about-heading">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-2xl border border-neutral-200/80 bg-white px-6 py-10 shadow-sm sm:px-10 sm:py-12">
+        <div className="rounded-2xl border border-neutral-200/80 bg-white px-6 py-10 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-md sm:px-10 sm:py-12">
           <h2 className="ethos-section-title text-center sm:text-left">What We Believe</h2>
           <SectionRule className="mx-auto sm:mx-0" />
           <div className="mx-auto mt-6 max-w-3xl space-y-4 text-center ethos-prose sm:text-left">
@@ -54,10 +58,10 @@ export default function Approach() {
             and in follow-through after go-live when questions still surface.
           </p>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-xl border border-neutral-200/90 bg-white p-8 shadow-sm">
+          <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-stretch">
+            <div className="flex h-full flex-col rounded-xl border border-neutral-200/90 bg-white p-8 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 hover:border-brand/25 hover:shadow-md">
               <h3 className="text-lg font-semibold leading-6 text-neutral-900">Our Story</h3>
-              <div className="mt-4 space-y-4 ethos-prose-sm">
+              <div className="mt-4 flex-1 space-y-4 ethos-prose-sm">
                 <p>
                   Ethos Consulting Group LLC exists to make complex technology initiatives feel manageable. We have sat
                   on the client side and the delivery side, which shapes how we communicate scope, risk, and cost.
@@ -69,9 +73,9 @@ export default function Approach() {
                 </p>
               </div>
             </div>
-            <div className="rounded-xl border border-neutral-200/90 bg-white p-8 shadow-sm">
+            <div className="flex h-full flex-col rounded-xl border border-neutral-200/90 bg-white p-8 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 hover:border-brand/25 hover:shadow-md">
               <h3 className="text-lg font-semibold leading-6 text-neutral-900">How Engagements Feel</h3>
-              <div className="mt-4 space-y-4 ethos-prose-sm">
+              <div className="mt-4 flex-1 space-y-4 ethos-prose-sm">
                 <p>
                   Most relationships start with a conversation about what is broken, what is changing in the business,
                   and what you have already tried. From there we propose a sensible next step—a short discovery, a
@@ -96,12 +100,11 @@ export default function Approach() {
           </p>
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {pillars.map((p) => (
-              <li
-                key={p.title}
-                className="rounded-xl border border-neutral-200/90 bg-white p-6 shadow-sm"
-              >
-                <h3 className="text-base font-semibold leading-6 text-neutral-900">{p.title}</h3>
-                <p className="mt-3 ethos-prose-sm">{p.text}</p>
+              <li key={p.title} className="h-full">
+                <div className="flex h-full flex-col rounded-xl border border-neutral-200/90 bg-white p-6 shadow-sm transition duration-300 ease-out motion-safe:hover:-translate-y-0.5 hover:border-brand/25 hover:shadow-md">
+                  <h3 className="text-base font-semibold leading-6 text-neutral-900">{p.title}</h3>
+                  <p className="mt-3 flex-1 ethos-prose-sm">{p.text}</p>
+                </div>
               </li>
             ))}
           </ul>
